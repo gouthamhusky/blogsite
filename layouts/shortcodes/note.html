@@ -1,0 +1,7 @@
+{{- $label := .Get 0 | default (.Get "title") | default "note" -}}
+<aside class="note">
+  <span class="note-label"># {{ $label }}</span>
+  <div class="note-body">
+    {{ .Inner | markdownify }}
+  </div>
+</aside>

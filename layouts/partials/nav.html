@@ -1,0 +1,9 @@
+<header class="site-head">
+  <a class="site-title" href="{{ "/" | relURL }}">{{ .Site.Title }}</a>
+  <nav class="nav">
+    <a href="{{ "/about/" | relURL }}">about</a>
+    <a href="{{ "/til/" | relURL }}">til</a>
+    <a href="{{ .Site.Params.github }}" rel="me">github</a>
+    <a href="{{ "/index.xml" | relURL }}">rss</a>
+  </nav>
+</header>

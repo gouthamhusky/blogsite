@@ -1,0 +1,32 @@
+baseURL = "https://example.com/"
+languageCode = "en-us"
+title = "your name"
+
+# --- content ---
+[params]
+  intro  = "I'm [name] — I work on infrastructure and platform stuff. This is where I write up things I'm figuring out."
+  github = "https://github.com/yourusername"
+
+# --- pagination (modern Hugo >= 0.128) ---
+[pagination]
+  pagerSize = 10
+
+# --- markdown / code highlighting ---
+[markup]
+  [markup.highlight]
+    style     = "github"   # light, readable
+    noClasses = true        # inline styles -> no extra CSS to ship
+    lineNos   = false
+  [markup.goldmark.renderer]
+    unsafe = true           # allow occasional raw HTML in a post
+
+# --- taxonomy: categories drive the homepage grouping ---
+[taxonomies]
+  category = "categories"
+  tag      = "tags"
+
+# --- RSS on home + each section ---
+[outputs]
+  home    = ["HTML", "RSS"]
+  section = ["HTML", "RSS"]
+  page    = ["HTML"]

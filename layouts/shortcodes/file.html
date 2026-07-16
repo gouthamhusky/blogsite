@@ -1,0 +1,7 @@
+{{- $name := .Get 0 | default (.Get "name") | default "file" -}}
+<div class="file">
+  <div class="file-name">{{ $name }}</div>
+  <div class="file-body">
+    {{ .Inner | markdownify }}
+  </div>
+</div>
