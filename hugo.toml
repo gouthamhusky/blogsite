@@ -1,11 +1,13 @@
-baseURL = "https://example.com/"
+baseURL = "https://gouthamhusky.github.io/blogsite/"
 languageCode = "en-us"
-title = "your name"
+title = "goutham k"
 
 # --- content ---
 [params]
-  intro  = "I'm [name] — I work on infrastructure and platform stuff. This is where I write up things I'm figuring out."
-  github = "https://github.com/yourusername"
+  # Rendered on the homepage inside a single <p> after `~ $ whoami`.
+  # Keep it ONE paragraph — inline markdown is fine, blank lines are not.
+  intro  = "I'm Goutham. I build an opinionated Kubernetes platform as a product at Akamai, and I'm obsessed with Kubernetes and cloud native in a way that is probably not entirely healthy. This is where I write about it."
+  github = "https://github.com/gouthamhusky"
 
 # --- pagination (modern Hugo >= 0.128) ---
 [pagination]

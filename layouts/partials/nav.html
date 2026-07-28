@@ -1,9 +1,11 @@
 <header class="site-head">
-  <a class="site-title" href="{{ "/" | relURL }}">{{ .Site.Title }}</a>
+  {{/* No leading slashes: relURL treats a rooted path as already-final and
+       skips the baseURL subpath, which 404s when served from /blogsite/. */}}
+  <a class="site-title" href="{{ .Site.Home.RelPermalink }}">{{ .Site.Title }}</a>
   <nav class="nav">
-    <a href="{{ "/about/" | relURL }}">about</a>
-    <a href="{{ "/til/" | relURL }}">til</a>
+    <a href="{{ "about/" | relURL }}">about</a>
+    <a href="{{ "til/" | relURL }}">til</a>
     <a href="{{ .Site.Params.github }}" rel="me">github</a>
-    <a href="{{ "/index.xml" | relURL }}">rss</a>
+    <a href="{{ "index.xml" | relURL }}">rss</a>
   </nav>
 </header>

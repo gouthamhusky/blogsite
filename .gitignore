@@ -1,0 +1,10 @@
+# Hugo build output
+/public/
+/resources/_gen/
+.hugo_build.lock
+
+# local agent context
+CLAUDE.md
+
+# macOS
+.DS_Store
