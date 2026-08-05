@@ -4,6 +4,13 @@
     <p>{{ .Site.Params.intro | markdownify }}</p>
   </section>
 
+  {{ with .Site.Params.community }}
+  <section class="intro">
+    <p class="prompt-line"><span class="prompt">~ $</span> cat community.md</p>
+    <p>{{ . | markdownify }}</p>
+  </section>
+  {{ end }}
+
   {{ $blog := where .Site.RegularPages "Section" "blog" }}
 
   {{ with first 5 $blog }}

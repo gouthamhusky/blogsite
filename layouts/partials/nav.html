@@ -4,8 +4,11 @@
   <a class="site-title" href="{{ .Site.Home.RelPermalink }}">{{ .Site.Title }}</a>
   <nav class="nav">
     <a href="{{ "about/" | relURL }}">about</a>
+    <a href="{{ "work/" | relURL }}">work</a>
+    <a href="{{ "community/" | relURL }}">community</a>
     <a href="{{ "til/" | relURL }}">til</a>
     <a href="{{ .Site.Params.github }}" rel="me">github</a>
+    <a href="{{ .Site.Params.linkedin }}" rel="me">linkedin</a>
     <a href="{{ "index.xml" | relURL }}">rss</a>
   </nav>
 </header>

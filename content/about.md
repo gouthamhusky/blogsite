@@ -25,7 +25,7 @@ operators, anyone who has read a Kubernetes changelog on purpose. No schedule.
 something small I worked out. Those are half for me, but they're public because
 somebody else has almost certainly hit the same thing.
 
-You can find me on [GitHub](https://github.com/gouthamhusky) and
-[LinkedIn](https://www.linkedin.com/in/goutham-kanags/), or email me at
+You can find me on [GitHub]({{< param "github" >}}) and
+[LinkedIn]({{< param "linkedin" >}}), or email me at
 `just.goutham.k@gmail.com`. I like getting mail about posts, especially the
 "you got this subtly wrong and here's why" kind.

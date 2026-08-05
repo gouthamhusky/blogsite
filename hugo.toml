@@ -6,8 +6,13 @@ title = "goutham k"
 [params]
   # Rendered on the homepage inside a single <p> after `~ $ whoami`.
   # Keep it ONE paragraph — inline markdown is fine, blank lines are not.
-  intro  = "I'm Goutham. I build an opinionated Kubernetes platform as a product at Akamai, and I'm obsessed with Kubernetes and cloud native in a way that is probably not entirely healthy. This is where I write about it."
+  intro  = "I'm Goutham. I build opinionated Kubernetes platforms for a living, and I'm obsessed with Kubernetes and cloud native in a way that is probably not entirely healthy. This is where I write about it — [work](/blogsite/work/) has the employer history, if you're into that."
   github = "https://github.com/gouthamhusky"
+  linkedin = "https://www.linkedin.com/in/goutham-kanags/"
+
+  # Rendered on the homepage inside a single <p> after `~ $ cat community.md`.
+  # Keep it ONE paragraph — inline markdown is fine, blank lines are not.
+  community = "Outside of the day job I organize the CNCF Austin chapter and show up to talk about this stuff out loud occasionally — details on the [community](/blogsite/community/) page."
 
 # --- pagination (modern Hugo >= 0.128) ---
 [pagination]
