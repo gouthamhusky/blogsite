@@ -6,7 +6,7 @@ title = "goutham k"
 [params]
   # Rendered on the homepage inside a single <p> after `~ $ whoami`.
   # Keep it ONE paragraph — inline markdown is fine, blank lines are not.
-  intro  = "I'm Goutham. I build opinionated Kubernetes platforms for a living, and I'm obsessed with Kubernetes and cloud native in a way that is probably not entirely healthy. This is where I write about it — [work](/blogsite/work/) has the employer history, if you're into that."
+  intro  = "I'm Goutham. Opinionated Kubernetes platforms and cloud native, professionally and compulsively — the job and the hobby stopped being different things a while ago. This is where I write about it."
   github = "https://github.com/gouthamhusky"
   linkedin = "https://www.linkedin.com/in/goutham-kanags/"
 

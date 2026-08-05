@@ -1,15 +1,10 @@
 {{ define "main" }}
   <section class="intro">
+    <p class="prompt-line"><span class="prompt">~ $</span> echo $greeting</p>
+    <p>hello world</p>
     <p class="prompt-line"><span class="prompt">~ $</span> whoami</p>
     <p>{{ .Site.Params.intro | markdownify }}</p>
   </section>
-
-  {{ with .Site.Params.community }}
-  <section class="intro">
-    <p class="prompt-line"><span class="prompt">~ $</span> cat community.md</p>
-    <p>{{ . | markdownify }}</p>
-  </section>
-  {{ end }}
 
   {{ $blog := where .Site.RegularPages "Section" "blog" }}
 
