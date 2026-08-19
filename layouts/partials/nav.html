@@ -1,7 +1,10 @@
 <header class="site-head">
   {{/* No leading slashes: relURL treats a rooted path as already-final and
        skips the baseURL subpath, which 404s when served from /blogsite/. */}}
-  <a class="site-title" href="{{ .Site.Home.RelPermalink }}">{{ .Site.Title }}</a>
+  <a class="site-title" href="{{ .Site.Home.RelPermalink }}">
+    <img class="avatar" src="{{ "img/avatar.jpg" | relURL }}" alt="" width="48" height="48">
+    {{ .Site.Title }}
+  </a>
   <nav class="nav">
     <a href="{{ "about/" | relURL }}">about</a>
     <a href="{{ "work/" | relURL }}">work</a>

@@ -56,7 +56,7 @@ a:focus-visible {
 .site-head {
   display: flex;
   flex-wrap: wrap;
-  align-items: baseline;
+  align-items: center;
   gap: .3rem 1rem;
   padding-bottom: 1.1rem;
   margin-bottom: 1.8rem;
@@ -64,6 +64,9 @@ a:focus-visible {
 }
 
 .site-title {
+  display: inline-flex;
+  align-items: center;
+  gap: .5rem;
   font-family: var(--mono);
   font-weight: 600;
   color: var(--fg);
@@ -71,6 +74,18 @@ a:focus-visible {
   margin-right: auto;
 }
 .site-title:hover { color: var(--accent); }
+
+.avatar {
+  display: block;
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 1px solid var(--border);
+  filter: grayscale(100%) contrast(1.08);
+  transition: filter .2s;
+}
+.site-title:hover .avatar { filter: grayscale(0%); }
 
 .nav {
   font-family: var(--mono);
