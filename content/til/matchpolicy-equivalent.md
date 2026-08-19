@@ -1,6 +1,6 @@
 ---
 title: "TIL: matchPolicy: Equivalent means your webhook still runs on versions you never listed"
-date: 2026-08-17
+date: 2026-08-19
 ---
 I assumed a webhook registered against one API version simply didn't see
 requests on any other version. Turns out that's only true if you set
