@@ -50,8 +50,8 @@ predictable behavior everywhere else.
 together.
 {{< /note >}}
 
-In Kubernetes you can wire it directly from the pod spec so the two numbers
-never drift apart:
+In Kubernetes you can pull the limit directly into the container using the
+**Downward API**, so the two numbers never drift apart:
 
 ```yaml
 env:
@@ -63,4 +63,5 @@ env:
     value: "off"
 ```
 
-One source of truth for the memory limit, no copy-paste to keep in sync.
+`resourceFieldRef` is how the Downward API exposes pod resource fields as
+environment variables — no hardcoding, no separate ConfigMap to keep in sync.
