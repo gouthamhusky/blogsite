@@ -91,7 +91,8 @@ a:focus-visible {
   font-family: var(--mono);
   font-size: .9rem;
   display: flex;
-  gap: 1rem;
+  flex-wrap: wrap;
+  gap: .2rem 1rem;
 }
 .nav a {
   color: var(--muted);
@@ -148,6 +149,50 @@ a:focus-visible {
 .list-intro { color: var(--fg); margin-bottom: 1.4rem; }
 .list-intro p { margin: .4rem 0; }
 
+/* "more: blog/ til/" under the homepage list */
+.more {
+  font-family: var(--mono);
+  font-size: .82rem;
+  color: var(--muted);
+  margin: .6rem 0 0;
+}
+.more a { margin-left: .4rem; }
+
+.empty { color: var(--muted); }
+
+/* ---------------------------------------------------------------
+   talks / conferences  ( label  date  title + details line )
+--------------------------------------------------------------- */
+.events li {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  column-gap: .8rem;
+  padding: .3rem 0;
+}
+.events li.labelled { grid-template-columns: 6.5rem auto 1fr; }
+.event-label {
+  font-family: var(--mono);
+  font-size: .82rem;
+  color: var(--accent);
+  white-space: nowrap;
+}
+.event-body { min-width: 0; }
+.event-meta {
+  display: block;
+  font-size: .85rem;
+  color: var(--muted);
+}
+
+/* on phones the label gets its own line above date + title */
+@media (max-width: 30rem) {
+  .events li.labelled { grid-template-columns: auto 1fr; }
+  .event-label { grid-column: 1 / -1; }
+}
+
+/* lists embedded in a page (community) shouldn't pick up post bullets */
+.post .posts { padding-left: 0; }
+.post .posts li { margin: 0; }
+
 /* ---------------------------------------------------------------
    post
 --------------------------------------------------------------- */
@@ -174,6 +219,60 @@ h1 { font-size: 1.6rem; line-height: 1.25; font-weight: 650; margin: 0 0 .3rem; 
   border-left: 3px solid var(--border);
   color: var(--muted);
 }
+
+/* ---------------------------------------------------------------
+   roles on the work page  ( git log --graph: a rail of commits,
+   newest on top, current one filled and tagged HEAD )
+--------------------------------------------------------------- */
+.role {
+  position: relative;
+  padding: 0 0 1.2rem 1.6rem;
+}
+/* the commit dot */
+.role::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: .45rem;
+  width: .7rem;
+  height: .7rem;
+  border-radius: 50%;
+  border: 2px solid var(--accent);
+  background: var(--bg);
+  box-sizing: border-box;
+}
+.role.current::before { background: var(--accent); }
+/* the rail down to the next role's dot; the last role in a run has none */
+.role:has(+ .role)::after {
+  content: "";
+  position: absolute;
+  left: calc(.35rem - 1px);
+  top: 1.25rem;
+  bottom: -.35rem;
+  width: 2px;
+  background: var(--border);
+}
+/* .post p would otherwise add a 1rem top margin that escapes the .role box
+   and leaves a gap the rail doesn't cross */
+.post .role-head { margin: 0 0 .3rem; }
+.role-tag {
+  font-family: var(--mono);
+  font-size: .72rem;
+  color: var(--accent);
+  border: 1px solid var(--accent);
+  border-radius: 3px;
+  padding: 0 .3rem;
+  margin-left: .3rem;
+  vertical-align: .1em;
+}
+.role-when {
+  display: block;
+  font-family: var(--mono);
+  font-size: .82rem;
+  color: var(--muted);
+}
+.role-body > :first-child { margin-top: 0; }
+.role-body > :last-child  { margin-bottom: 0; }
 
 /* ---------------------------------------------------------------
    code

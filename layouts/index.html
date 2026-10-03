@@ -5,30 +5,36 @@
     <p>{{ .Site.Params.intro | markdownify }}</p>
   </section>
 
-  {{ $blog := where .Site.RegularPages "Section" "blog" }}
+  {{/* Next upcoming talk, latest past talk, latest past conference — each
+       only if one exists. A talk at a conference can show up in both. */}}
+  {{ $talks := where .Site.RegularPages "Section" "talks" }}
+  {{ $confs := where .Site.RegularPages "Section" "conferences" }}
+  {{ $rows := slice }}
+  {{ range first 1 (where $talks "Date" "gt" now).ByDate }}{{ $rows = $rows | append (dict "page" . "label" "next talk") }}{{ end }}
+  {{ range first 1 (where $talks "Date" "le" now).ByDate.Reverse }}{{ $rows = $rows | append (dict "page" . "label" "latest talk") }}{{ end }}
+  {{ range first 1 (where $confs "Date" "le" now).ByDate.Reverse }}{{ $rows = $rows | append (dict "page" . "label" "latest conf") }}{{ end }}
 
-  {{ with first 5 $blog }}
   <section class="listing">
-    <p class="prompt-line"><span class="prompt">~ $</span> ls -t blog/ | head</p>
+    <p class="prompt-line"><span class="prompt">~ $</span> cat community.md</p>
+    <p>{{ .Site.Params.community | markdownify }}</p>
+    {{ with $rows }}
+    <ul class="posts events">
+      {{ range . }}{{ partial "event-line.html" . }}{{ end }}
+    </ul>
+    {{ end }}
+  </section>
+
+  {{ $writing := where .Site.RegularPages "Section" "in" (slice "blog" "til") }}
+
+  {{ with first 10 $writing.ByDate.Reverse }}
+  <section class="listing">
+    <p class="prompt-line"><span class="prompt">~ $</span> ls -t blog/* til/* | head</p>
     <ul class="posts">
       {{ range . }}
       <li><time class="date" datetime="{{ .Date.Format "2006-01-02" }}">{{ .Date.Format "Jan 2006" }}</time> <a href="{{ .RelPermalink }}">{{ .Title }}</a></li>
       {{ end }}
     </ul>
-  </section>
-  {{ end }}
-
-  {{ with .Site.Taxonomies.categories }}
-  <section class="listing">
-    <p class="prompt-line"><span class="prompt">~ $</span> ls blog/</p>
-    {{ range $term, $pages := . }}
-    <h2 class="cat">{{ $term }}</h2>
-    <ul class="posts">
-      {{ range $pages.Pages }}
-      <li><time class="date" datetime="{{ .Date.Format "2006-01-02" }}">{{ .Date.Format "Jan 2006" }}</time> <a href="{{ .RelPermalink }}">{{ .Title }}</a></li>
-      {{ end }}
-    </ul>
-    {{ end }}
+    <p class="more">more: <a href="{{ "blog/" | relURL }}">blog/</a> <a href="{{ "til/" | relURL }}">til/</a></p>
   </section>
   {{ end }}
 {{ end }}

@@ -1,0 +1,11 @@
+{{- /* One talk or conference as a list row.
+       Expects (dict "page" $page) plus an optional "label" ("next talk"). */ -}}
+{{- $p := .page -}}
+<li class="event{{ if .label }} labelled{{ end }}">
+  {{- with .label }}<span class="event-label">{{ . }}</span>{{ end }}
+  <time class="date" datetime="{{ $p.Date.Format "2006-01-02" }}">{{ $p.Date.Format "2006-01-02" }}</time>
+  <span class="event-body">
+    <a href="{{ $p.RelPermalink }}">{{ $p.Title }}</a>
+    {{- with partial "event-meta.html" $p }}<span class="event-meta">{{ . }}</span>{{ end }}
+  </span>
+</li>

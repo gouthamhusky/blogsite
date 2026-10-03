@@ -9,3 +9,11 @@ Talks, CNCF organizing, and conference appearances. Newest first — see
 **Event Coordinator** — Jun 2026 to present — Austin, TX (Remote)
 
 Volunteer organizer for the CNCF local chapter in Austin.
+
+## [Talks]({{< relref "/talks" >}})
+
+{{< events "talks" >}}
+
+## [Conferences]({{< relref "/conferences" >}})
+
+{{< events "conferences" >}}

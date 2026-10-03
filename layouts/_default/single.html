@@ -4,6 +4,12 @@
     <h1>{{ .Title }}</h1>
     {{ if in (slice "blog" "til") .Section }}
     <p class="post-meta"><time datetime="{{ .Date.Format "2006-01-02" }}">{{ .Date.Format "January 2, 2006" }}</time></p>
+    {{ else if in (slice "talks" "conferences") .Section }}
+    <p class="post-meta">
+      <time datetime="{{ .Date.Format "2006-01-02" }}">{{ .Date.Format "January 2, 2006" }}</time>
+      {{- if .Date.After now }} · upcoming{{ end }}
+      {{- with partial "event-meta.html" . }} · {{ . }}{{ end }}
+    </p>
     {{ end }}
   </header>
   {{ .Content }}
