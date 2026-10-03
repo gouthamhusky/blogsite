@@ -221,6 +221,60 @@ h1 { font-size: 1.6rem; line-height: 1.25; font-weight: 650; margin: 0 0 .3rem; 
 }
 
 /* ---------------------------------------------------------------
+   roles on the work page  ( git log --graph: a rail of commits,
+   newest on top, current one filled and tagged HEAD )
+--------------------------------------------------------------- */
+.role {
+  position: relative;
+  padding: 0 0 1.2rem 1.6rem;
+}
+/* the commit dot */
+.role::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: .45rem;
+  width: .7rem;
+  height: .7rem;
+  border-radius: 50%;
+  border: 2px solid var(--accent);
+  background: var(--bg);
+  box-sizing: border-box;
+}
+.role.current::before { background: var(--accent); }
+/* the rail down to the next role's dot; the last role in a run has none */
+.role:has(+ .role)::after {
+  content: "";
+  position: absolute;
+  left: calc(.35rem - 1px);
+  top: 1.25rem;
+  bottom: -.35rem;
+  width: 2px;
+  background: var(--border);
+}
+/* .post p would otherwise add a 1rem top margin that escapes the .role box
+   and leaves a gap the rail doesn't cross */
+.post .role-head { margin: 0 0 .3rem; }
+.role-tag {
+  font-family: var(--mono);
+  font-size: .72rem;
+  color: var(--accent);
+  border: 1px solid var(--accent);
+  border-radius: 3px;
+  padding: 0 .3rem;
+  margin-left: .3rem;
+  vertical-align: .1em;
+}
+.role-when {
+  display: block;
+  font-family: var(--mono);
+  font-size: .82rem;
+  color: var(--muted);
+}
+.role-body > :first-child { margin-top: 0; }
+.role-body > :last-child  { margin-bottom: 0; }
+
+/* ---------------------------------------------------------------
    code
 --------------------------------------------------------------- */
 code, pre, kbd { font-family: var(--mono); }

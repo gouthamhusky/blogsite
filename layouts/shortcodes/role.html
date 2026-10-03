@@ -1,0 +1,20 @@
+{{- /* One title held at a company, drawn as a commit on a `git log --graph`
+       rail. Consecutive roles connect; dates containing "present" mark the
+       current role (filled dot + HEAD).
+       {{< role title="Software Engineer II" dates="Sep 2024 to present" place="Cambridge, MA (Remote)" >}}
+       optional markdown body
+       {{< /role >}} */ -}}
+{{- $dates := .Get "dates" | default "" -}}
+{{- $current := in $dates "present" -}}
+<div class="role{{ if $current }} current{{ end }}">
+  <p class="role-head">
+    <strong class="role-title">{{ .Get "title" }}</strong>
+    {{- if $current }} <span class="role-tag">HEAD</span>{{ end }}
+    <span class="role-when">{{ $dates }}{{ with .Get "place" }} — {{ . }}{{ end }}</span>
+  </p>
+  {{- with .Inner }}
+  <div class="role-body">
+    {{ . | markdownify }}
+  </div>
+  {{- end }}
+</div>
