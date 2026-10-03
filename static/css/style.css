@@ -91,7 +91,8 @@ a:focus-visible {
   font-family: var(--mono);
   font-size: .9rem;
   display: flex;
-  gap: 1rem;
+  flex-wrap: wrap;
+  gap: .2rem 1rem;
 }
 .nav a {
   color: var(--muted);
@@ -147,6 +148,50 @@ a:focus-visible {
 .list-head h1 { margin-bottom: .3rem; }
 .list-intro { color: var(--fg); margin-bottom: 1.4rem; }
 .list-intro p { margin: .4rem 0; }
+
+/* "more: blog/ til/" under the homepage list */
+.more {
+  font-family: var(--mono);
+  font-size: .82rem;
+  color: var(--muted);
+  margin: .6rem 0 0;
+}
+.more a { margin-left: .4rem; }
+
+.empty { color: var(--muted); }
+
+/* ---------------------------------------------------------------
+   talks / conferences  ( label  date  title + details line )
+--------------------------------------------------------------- */
+.events li {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  column-gap: .8rem;
+  padding: .3rem 0;
+}
+.events li.labelled { grid-template-columns: 6.5rem auto 1fr; }
+.event-label {
+  font-family: var(--mono);
+  font-size: .82rem;
+  color: var(--accent);
+  white-space: nowrap;
+}
+.event-body { min-width: 0; }
+.event-meta {
+  display: block;
+  font-size: .85rem;
+  color: var(--muted);
+}
+
+/* on phones the label gets its own line above date + title */
+@media (max-width: 30rem) {
+  .events li.labelled { grid-template-columns: auto 1fr; }
+  .event-label { grid-column: 1 / -1; }
+}
+
+/* lists embedded in a page (community) shouldn't pick up post bullets */
+.post .posts { padding-left: 0; }
+.post .posts li { margin: 0; }
 
 /* ---------------------------------------------------------------
    post

@@ -1,0 +1,20 @@
+{{- /* Talks or conferences split into upcoming (soonest first) and past
+       (newest first). "Upcoming" is relative to build time, so the daily
+       scheduled deploy is what rolls entries over. Context is the pages. */ -}}
+{{- $upcoming := where . "Date" "gt" now -}}
+{{- $past := where . "Date" "le" now -}}
+{{- with $upcoming }}
+<p class="cat">upcoming</p>
+<ul class="posts events">
+  {{- range .ByDate }}{{ partial "event-line.html" (dict "page" .) }}{{ end }}
+</ul>
+{{- end }}
+{{- with $past }}
+<p class="cat">past</p>
+<ul class="posts events">
+  {{- range .ByDate.Reverse }}{{ partial "event-line.html" (dict "page" .) }}{{ end }}
+</ul>
+{{- end }}
+{{- if not . }}
+<p class="empty">nothing here yet.</p>
+{{- end }}
