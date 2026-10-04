@@ -9,9 +9,15 @@ slides: "https://github.com/gouthamhusky/talks/blob/main/2026-09-22-grafana-for-
 video: ""
 linkedin: "https://www.linkedin.com/posts/goutham-kanags_i-just-finished-presenting-my-talk-on-grafana-ugcPost-7508382117324623873-Vtz4/"
 ---
-A tenant cluster is stuck: which one, in which region, and why? On a
-platform built from operators, the answer is already written down. Every
-reconcile loop writes status conditions back onto the resource. This talk
-exports those conditions as Prometheus time series (one gauge, the condition
-as a label, `min` to aggregate) and builds one Grafana dashboard for the
-whole fleet, across every cluster and every region.
+A platform team doesn't run one Kubernetes cluster. It runs its customers&rsquo;
+clusters: a fleet of them, spread across regions, each one provisioned and
+reconciled by an operator on a management cluster. When a customer's cluster
+gets stuck, the questions come fast. Which cluster? Which region? Stuck at
+which stage? And whose is it?
+
+The operator already knows. Every reconcile writes status conditions
+(`InfrastructureReady`, `ArgoAppReady`, `Synced`) back onto the cluster
+resource. This talk exports those conditions as Prometheus metrics (one
+gauge, the condition as a label, `min` to aggregate) and turns them into a
+single Grafana dashboard that answers those questions for every customer
+cluster, in every region.
