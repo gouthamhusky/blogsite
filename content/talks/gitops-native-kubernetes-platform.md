@@ -5,7 +5,7 @@ publishDate: 2026-06-25
 event: "Kubernetes Austin — GitOps Golden Path & K8s Validation"
 event_url: "https://www.meetup.com/kubernetes-austin/events/315184489/"
 location: "Austin, TX"
-slides: "https://github.com/gouthamhusky/talks/tree/main/2026-06-25-gitops-native-kubernetes-platform"
+slides: "https://github.com/gouthamhusky/talks/blob/main/2026-06-25-gitops-native-kubernetes-platform/gitops-native-kubernetes-platform.pdf"
 video: ""
 linkedin: "https://www.linkedin.com/posts/goutham-kanags_kubernetes-platformengineering-cncf-ugcPost-7476418430171246592-EjfA/"
 ---
