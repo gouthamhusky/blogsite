@@ -3,6 +3,10 @@ name: Deploy Hugo site to Pages
 on:
   push:
     branches: [main]
+  # Daily rebuild so talks/conferences roll from "upcoming" to past on
+  # their own — the site only knows what "now" is at build time.
+  schedule:
+    - cron: "17 6 * * *"
   workflow_dispatch:
 
 permissions:

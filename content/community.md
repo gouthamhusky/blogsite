@@ -2,10 +2,20 @@
 title: "community"
 ---
 
-Talks, CNCF organizing, and conference appearances. Newest first — see
-[work]({{< relref "/work" >}}) for the paid stuff.
+Half the fun of cloud native is the community around it: organizing Cloud
+Native Austin, giving talks at meetups and conferences, and trading notes in
+the hallways of the ones I attend.
 
-## [Cloud Native Computing Foundation (CNCF)](https://www.cncf.io)
-**Event Coordinator** — Jun 2026 to present — Austin, TX (Remote)
+## [Cloud Native Austin](https://cloudnativeaustin.com/)
+**Organizer** — Jun 2026 to present — Austin, TX
 
-Volunteer organizer for the CNCF local chapter in Austin.
+The official CNCF community group for Central Texas: free, vendor-neutral
+meetups with production-focused talks on Kubernetes and cloud native.
+
+## [Talks]({{< relref "/talks" >}})
+
+{{< events "talks" >}}
+
+## [Conferences]({{< relref "/conferences" >}})
+
+{{< events "conferences" >}}

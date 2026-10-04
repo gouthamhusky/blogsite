@@ -1,0 +1,19 @@
+{{- /* Photo grid for the images in a page bundle (content/<section>/<slug>/*.jpg).
+       Only resized copies are published; the originals, and any EXIF/GPS
+       data in them, never ship. Name files 01-…, 02-… to control order, and
+       give one a caption with front matter `resources: [{src, title}]`. */ -}}
+{{- with .Resources.ByType "image" }}
+<section class="photos" id="photos">
+  <p class="cat">photos</p>
+  <div class="photo-grid">
+  {{- range $i, $img := . }}
+    {{- $img = $img.Filter images.AutoOrient }}
+    {{- $full := $img.Fit "1600x1600 webp q80" }}
+    {{- $thumb := $img.Fill "600x450 webp q75 Smart" }}
+    {{- $alt := printf "%s, photo %d" $.Title (add $i 1) }}
+    {{- if ne $img.Title $img.Name }}{{ $alt = $img.Title }}{{ end }}
+    <a href="{{ $full.RelPermalink }}"><img src="{{ $thumb.RelPermalink }}" width="{{ $thumb.Width }}" height="{{ $thumb.Height }}" alt="{{ $alt }}" loading="lazy"></a>
+  {{- end }}
+  </div>
+</section>
+{{- end }}
