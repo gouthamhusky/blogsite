@@ -6,12 +6,14 @@ The résumé version: dates and bullets instead of opinions about control
 planes. Newest first.
 
 ## [Akamai Technologies](https://www.akamai.com)
-Member of the Kubernetes Product Platform (KPP) team. We build a curated,
-opinionated Kubernetes platform — the platform I ramble about on the
-[about]({{< relref "/about" >}}) page is this one, so at least I have to
-live with my own opinions. Built-in infrastructure provisioning, metrics,
-logging, monitoring, and alerting. My job is to keep it highly available,
-easily scalable, and boring in the specific ways PCI and CIS auditors like.
+Kubernetes Product Platform (KPP) team, building a curated, opinionated
+Kubernetes platform for Akamai Cloud. Customer clusters are provisioned and
+upgraded declaratively with [Cluster API](https://cluster-api.sigs.k8s.io/)
+(CAPI) and [CAPL](https://github.com/linode/cluster-api-provider-linode), the
+Cluster API provider for Linode, and reconciled from management clusters across regions.
+Every cluster ships with infrastructure provisioning, metrics, logging,
+monitoring, and alerting built in. My job is to keep it highly available,
+easy to scale, and boring in the specific ways PCI and CIS auditors like.
 
 {{< role title="Senior Software Engineer" dates="Oct 2026 to present" place="Cambridge, MA (Remote)" >}}{{< /role >}}
 
