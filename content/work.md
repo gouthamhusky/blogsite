@@ -2,10 +2,8 @@
 title: "work"
 ---
 
-The résumé version, for people who want dates and bullets instead of my
-opinions about control planes. Newest first — see [about]({{< relref "/about" >}})
-for the opinions, or [community]({{< relref "/community" >}}) for talks and
-CNCF stuff.
+The résumé version: dates and bullets instead of opinions about control
+planes. Newest first.
 
 ## [Akamai Technologies](https://www.akamai.com)
 Member of the Kubernetes Product Platform (KPP) team. We build a curated,
