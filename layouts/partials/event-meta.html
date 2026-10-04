@@ -1,11 +1,12 @@
 {{- /* Inline " · "-joined details for a talk or conference: where it was,
-       your role, and any slides/recording links. Context is the page. */ -}}
+       your role, and any slides/recording/linkedin links. Context is the page. */ -}}
 {{- $parts := slice -}}
-{{- with .Params.event }}{{ $parts = $parts | append (dict "text" .) }}{{ end -}}
+{{- with .Params.event }}{{ $parts = $parts | append (dict "text" . "url" ($.Params.event_url | default "")) }}{{ end -}}
 {{- with .Params.location }}{{ $parts = $parts | append (dict "text" .) }}{{ end -}}
 {{- with .Params.role }}{{ $parts = $parts | append (dict "text" .) }}{{ end -}}
 {{- with .Params.slides }}{{ $parts = $parts | append (dict "text" "slides" "url" .) }}{{ end -}}
 {{- with .Params.video }}{{ $parts = $parts | append (dict "text" "recording" "url" .) }}{{ end -}}
+{{- with .Params.linkedin }}{{ $parts = $parts | append (dict "text" "linkedin" "url" .) }}{{ end -}}
 {{- range $i, $p := $parts -}}
   {{- if $i }} · {{ end -}}
   {{- with $p.url }}<a href="{{ . }}">{{ $p.text }}</a>{{ else }}{{ $p.text }}{{ end -}}
