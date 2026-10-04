@@ -7,7 +7,7 @@ Native Austin, giving talks at meetups and conferences, and trading notes in
 the hallways of the ones I attend.
 
 ## [Cloud Native Austin](https://cloudnativeaustin.com/)
-**Event Coordinator** — Jun 2026 to present — Austin, TX (Remote)
+**Event Coordinator** — Jun 2026 to present — Austin, TX
 
 Volunteer organizer for Cloud Native Austin, the official CNCF community
 group for Central Texas: free, vendor-neutral meetups with production-focused
