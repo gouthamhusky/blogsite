@@ -2,9 +2,10 @@
 title: "community"
 ---
 
-The unpaid side of all this: organizing Cloud Native Austin, giving talks at
-meetups and conferences, and sitting in the audience at the ones I attend.
-See [work]({{< relref "/work" >}}) for the paid side.
+Half the fun of cloud native is the community around it: organizing Cloud
+Native Austin, giving talks at meetups and conferences, and trading notes in
+the hallways of the ones I attend. See [work]({{< relref "/work" >}}) for the
+day job.
 
 ## [Cloud Native Austin](https://cloudnativeaustin.com/)
 **Event Coordinator** — Jun 2026 to present — Austin, TX (Remote)
