@@ -2,8 +2,9 @@
 title: "community"
 ---
 
-Talks, CNCF organizing, and conference appearances. Newest first — see
-[work]({{< relref "/work" >}}) for the paid stuff.
+The unpaid side of all this: organizing Cloud Native Austin, giving talks at
+meetups and conferences, and sitting in the audience at the ones I attend.
+See [work]({{< relref "/work" >}}) for the paid side.
 
 ## [Cloud Native Austin](https://cloudnativeaustin.com/)
 **Event Coordinator** — Jun 2026 to present — Austin, TX (Remote)
