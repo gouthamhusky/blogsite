@@ -189,6 +189,23 @@ a:focus-visible {
   .event-label { grid-column: 1 / -1; }
 }
 
+/* photo grid on talk / conference pages */
+.photo-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(11rem, 1fr));
+  gap: .5rem;
+}
+.photo-grid a { display: block; }
+.photo-grid img {
+  display: block;
+  width: 100%;
+  height: auto;
+  aspect-ratio: 4 / 3;
+  object-fit: cover;
+  border: 1px solid var(--border);
+  border-radius: 4px;
+}
+
 /* lists embedded in a page (community) shouldn't pick up post bullets */
 .post .posts { padding-left: 0; }
 .post .posts li { margin: 0; }

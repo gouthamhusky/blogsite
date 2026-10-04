@@ -33,6 +33,11 @@ upcoming talk, the latest past talk, and the latest past conference; the full
 lists live on the community page. A scheduled deploy rebuilds daily so things
 roll from upcoming to past on their own.
 
+To add photos, make the entry a folder (`content/conferences/<name>/index.md`)
+and put `.jpg` files next to `index.md`; name them `01-…`, `02-…` for order.
+The page shows a grid of resized copies. The originals are never published,
+so EXIF/GPS data in phone photos stays off the site.
+
 ### shortcodes
 
 A callout:

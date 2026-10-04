@@ -13,5 +13,6 @@
     {{ end }}
   </header>
   {{ .Content }}
+  {{ if in (slice "talks" "conferences") .Section }}{{ partial "photos.html" . }}{{ end }}
 </article>
 {{ end }}
