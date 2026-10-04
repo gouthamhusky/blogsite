@@ -5,7 +5,7 @@ publishDate: 2026-09-22
 event: "Grafana & Friends Austin — Autumn of Observability"
 event_url: "https://www.meetup.com/grafana-friends-austin-meetup-group/events/316372961/"
 location: "Austin, TX"
-slides: ""
+slides: "https://github.com/gouthamhusky/talks/tree/main/2026-09-22-grafana-for-kubernetes-platforms"
 video: ""
 linkedin: "https://www.linkedin.com/posts/goutham-kanags_i-just-finished-presenting-my-talk-on-grafana-ugcPost-7508382117324623873-Vtz4/"
 ---
