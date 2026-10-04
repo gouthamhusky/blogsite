@@ -22,6 +22,7 @@
       {{ range . }}{{ partial "event-line.html" . }}{{ end }}
     </ul>
     {{ end }}
+    <p class="more">more: <a href="{{ "talks/" | relURL }}">talks/</a> <a href="{{ "conferences/" | relURL }}">conferences/</a> <a href="{{ "community/" | relURL }}">community/</a></p>
   </section>
 
   {{ $writing := where .Site.RegularPages "Section" "in" (slice "blog" "til") }}
