@@ -3,14 +3,8 @@ title: "reaching rex on my dev vm over an ssh tunnel"
 date: 2026-11-01
 categories: ["linux"]
 tags: ["ssh", "systemd", "launchd"]
-draft: true
+draft: false
 ---
-<!--
-TODO(goutham): open with a sentence or two on why you wanted this: what you
-do on the dev vm all day, and what you used before Rex (plain ssh? tmux?).
-The paragraph below works without it, but your reason is the better hook.
--->
-
 [Rex](https://www.superlogical.com/rex/docs/linux/installation) is a terminal multiplexer with a native Mac app. It's built as a client and a server: the server owns the sessions, and the app and the `rex` CLI are clients that connect to it. I wanted my sessions to live on my Linux dev VM, which means getting the app on my laptop to talk to a Rex server on the VM.
 
 That turned into a nice small tour of `ssh -L`, launchd and systemd user services, so here it is written down.
